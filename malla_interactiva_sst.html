@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Interactiva - SST</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #004080;
+    }
+    .semestres {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .semestre {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      width: 280px;
+    }
+    .semestre h2 {
+      text-align: center;
+      color: #0074cc;
+    }
+    .materia {
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .materia:hover {
+      background: #e6f2ff;
+    }
+    .completada {
+      background-color: #cce5cc;
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva - Tecnología en Seguridad e Higiene Ocupacional</h1>
+  <div class="semestres">
+    <!-- SEMESTRE 1 -->
+    <div class="semestre">
+      <h2>Semestre 1</h2>
+      <div class="materia" onclick="toggle(this)" id="1-1">Precálculo</div>
+      <div class="materia" onclick="toggle(this)" id="1-2">Algoritmo</div>
+      <div class="materia" onclick="toggle(this)" id="1-3">Química General y Laboratorio</div>
+      <div class="materia" onclick="toggle(this)" id="1-4">Introducción a la Seguridad e Higiene Ocupacional</div>
+      <div class="materia" onclick="toggle(this)" id="1-5">Elaboración e Interpretación de Planos</div>
+      <div class="materia" onclick="toggle(this)" id="1-6">Comunicación Oral y Escrita</div>
+      <div class="materia" onclick="toggle(this)" id="1-7">Proyecto de Vida</div>
+    </div>
+
+    <!-- SEMESTRE 2 -->
+    <div class="semestre">
+      <h2>Semestre 2</h2>
+      <div class="materia" onclick="toggle(this)" id="2-1">Cálculo Diferencial</div>
+      <div class="materia" onclick="toggle(this)" id="2-2">Procesos Industriales</div>
+      <div class="materia" onclick="toggle(this)" id="2-3">Física Mecánica y Laboratorio</div>
+      <div class="materia" onclick="toggle(this)" id="2-4">Legislación en SST</div>
+      <div class="materia" onclick="toggle(this)" id="2-5">Gestión de Materiales y Sustancias Peligrosas</div>
+      <div class="materia" onclick="toggle(this)" id="2-6">Cultura y Deporte</div>
+    </div>
+
+    <!-- Agrega más semestres aquí si lo deseas -->
+  </div>
+
+  <script>
+    function toggle(element) {
+      element.classList.toggle("completada");
+      const id = element.id;
+      const estado = element.classList.contains("completada");
+      localStorage.setItem(id, estado);
+    }
+
+    window.onload = () => {
+      document.querySelectorAll(".materia").forEach((el) => {
+        const id = el.id;
+        const estado = localStorage.getItem(id) === "true";
+        if (estado) el.classList.add("completada");
+      });
+    };
+  </script>
+</body>
+</html>
