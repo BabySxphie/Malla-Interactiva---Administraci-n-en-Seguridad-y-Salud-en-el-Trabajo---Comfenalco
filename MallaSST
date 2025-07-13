@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Interactiva - SST</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #004080; }
+    .semestres { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .semestre {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      width: 280px;
+    }
+    .semestre h2 { text-align: center; color: #0074cc; }
+    .materia {
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .materia:hover { background: #e6f2ff; }
+    .completada { background-color: #cce5cc; text-decoration: line-through; color: gray; }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva - Tecnología en Seguridad e Higiene Ocupacional</h1>
+  <div class="semestres">
+    <!-- SEMESTRE 1 -->
+    <div class="semestre">
+      <h2>Semestre 1</h2>
+      <div class="materia" onclick="toggle(this)">Precálculo</div>
+      <div class="materia" onclick="toggle(this)">Algoritmo</div>
+      <div class="materia" onclick="toggle(this)">Química General y Laboratorio</div>
+      <div class="materia" onclick="toggle(this)">Introducción a la Seguridad e Higiene Ocupacional</div>
+      <div class="materia" onclick="toggle(this)">Elaboración e Interpretación de Planos</div>
+      <div class="materia" onclick="toggle(this)">Comunicación Oral y Escrita</div>
+      <div class="materia" onclick="toggle(this)">Proyecto de Vida</div>
+    </div>
+
+    <!-- SEMESTRE 2 -->
+    <div class="semestre">
+      <h2>Semestre 2</h2>
+      <div class="materia" onclick="toggle(this)">Cálculo Diferencial</div>
+      <div class="materia" onclick="toggle(this)">Procesos Industriales</div>
+      <div class="materia" onclick="toggle(this)">Física Mecánica y Laboratorio</div>
+      <div class="materia" onclick="toggle(this)">Legislación en Seguridad y Salud en el Trabajo</div>
+      <div class="materia" onclick="toggle(this)">Gestión de Materiales y Sustancias Peligrosas</div>
+      <div class="materia" onclick="toggle(this)">Cultura y Deporte</div>
+    </div>
+
+    <!-- SEMESTRE 3 -->
+    <div class="semestre">
+      <h2>Semestre 3</h2>
+      <div class="materia" onclick="toggle(this)">Cálculo Integral</div>
+      <div class="materia" onclick="toggle(this)">Estadística</div>
+      <div class="materia" onclick="toggle(this)">Física Eléctrica y Laboratorio</div>
+      <div class="materia" onclick="toggle(this)">Higiene Ocupacional I</div>
+      <div class="materia" onclick="toggle(this)">Seguridad Industrial I</div>
+      <div class="materia" onclick="toggle(this)">Inglés I</div>
+    </div>
+
+    <!-- SEMESTRE 4 -->
+    <div class="semestre">
+      <h2>Semestre 4</h2>
+      <div class="materia" onclick="toggle(this)">Medicina Preventiva y del Trabajo</div>
+      <div class="materia" onclick="toggle(this)">Estadística Aplicada</div>
+      <div class="materia" onclick="toggle(this)">Higiene Ocupacional II</div>
+      <div class="materia" onclick="toggle(this)">Seguridad Industrial II</div>
+      <div class="materia" onclick="toggle(this)">Administración General</div>
+      <div class="materia" onclick="toggle(this)">Seminario Investigativo</div>
+      <div class="materia" onclick="toggle(this)">Inglés II</div>
+    </div>
+
+    <!-- SEMESTRE 5 -->
+    <div class="semestre">
+      <h2>Semestre 5</h2>
+      <div class="materia" onclick="toggle(this)">Innovación y Emprendimiento</div>
+      <div class="materia" onclick="toggle(this)">Ergonomía</div>
+      <div class="materia" onclick="toggle(this)">Higiene Ocupacional III</div>
+      <div class="materia" onclick="toggle(this)">Sistemas de Costeo</div>
+      <div class="materia" onclick="toggle(this)">Electiva Libre Sociohumanística I</div>
+      <div class="materia" onclick="toggle(this)">Electiva de Profundización I</div>
+      <div class="materia" onclick="toggle(this)">Inglés III</div>
+    </div>
+
+    <!-- SEMESTRE 6 -->
+    <div class="semestre">
+      <h2>Semestre 6</h2>
+      <div class="materia" onclick="toggle(this)">Competencia Ciudadana</div>
+      <div class="materia" onclick="toggle(this)">Gestión del Talento Humano</div>
+      <div class="materia" onclick="toggle(this)">Ambiente y Desarrollo</div>
+      <div class="materia" onclick="toggle(this)">Seguridad Industrial III</div>
+      <div class="materia" onclick="toggle(this)">Electiva Libre Sociohumanística II</div>
+      <div class="materia" onclick="toggle(this)">Electiva de Profundización II</div>
+      <div class="materia" onclick="toggle(this)">Inglés IV</div>
+    </div>
+  </div>
+
+  <script>
+    function toggle(element) {
+      element.classList.toggle("completada");
+    }
+  </script>
+</body>
+</html>
